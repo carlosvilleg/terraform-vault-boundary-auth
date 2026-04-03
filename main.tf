@@ -1,6 +1,6 @@
 
 resource "vault_identity_entity" "boundary" {
-  name      = "HCP Boundary"
+  name      = "hcp boundary"
 }
 
 resource "vault_policy" "boundary-controller" {
@@ -15,6 +15,7 @@ resource "vault_policy" "secrets" {
 
 resource "vault_token" "boundary" {
   role_name = vault_token_auth_backend_role.boundary.role_name
+  policies = [vault_policy.boundary-controller.name, vault_policy.secrets.name]
   no_parent = true
   renewable = true
   period = "24h"

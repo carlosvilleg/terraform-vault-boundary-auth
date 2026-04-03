@@ -1,9 +1,9 @@
 
 path "sandbox-ssh-user-ca/issue/*" {
-	capabilities = ["read"]
+	capabilities = ["read", "create", "update"]
 }
 
 path "sandbox-ssh-user-ca/sign/*" {
-	capabilities = ["read"]
+	capabilities = ["read", "create", "update"]
 }
 
